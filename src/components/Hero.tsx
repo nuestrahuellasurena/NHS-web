@@ -5,11 +5,11 @@ export const Hero: React.FC = () => {
   return (
     <section
       id="inicio"
-      className="relative bg-forest-pattern text-white min-h-[85vh] flex items-center py-20 overflow-hidden"
+      className="relative bg-forest-pattern text-white min-h-[90vh] flex items-center py-20 overflow-hidden"
     >
-      <div className="absolute inset-0 bg-gradient-to-b from-[#14312A]/60 via-[#14312A]/80 to-[#0D211B] pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-b pointer-events-none" />
 
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full z-10">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-0 w-full z-10">
         <div className="max-w-3xl space-y-6">
           {/* Overline Badge */}
           <div className="inline-flex items-center gap-2">

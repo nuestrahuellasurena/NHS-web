@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, TreePine } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 
 const navLinks = [
   { label: 'Inicio', href: '#inicio' },
   { label: 'Quiénes Somos', href: '#quienes-somos' },
   { label: 'Servicios', href: '#servicios' },
-  { label: 'Aliados', href: '#aliados' },
   { label: 'Voluntariados', href: '#voluntariados' },
   { label: 'Relatores', href: '#relatores' },
+  { label: 'Aliados', href: '#aliados' },
 ];
 
 export const Navbar: React.FC = () => {
@@ -41,17 +41,15 @@ export const Navbar: React.FC = () => {
   const linkClasses = (href: string, isMobile = false) => {
     const isActive = activeSection === href.replace('#', '');
     if (isMobile) {
-      return `block px-3 py-2 rounded-md text-base font-medium transition-colors ${
-        isActive
-          ? 'bg-fiordo-800/40 text-[#BD6836]'
-          : 'text-gray-300 hover:bg-fiordo-800/20 hover:text-white'
-      }`;
+      return `block px-3 py-2 rounded-md text-base font-medium transition-colors ${isActive
+        ? 'bg-fiordo-800/40 text-[#BD6836]'
+        : 'text-gray-300 hover:bg-fiordo-800/20 hover:text-white'
+        }`;
     }
-    return `text-sm font-medium transition-colors hover:text-[#BD6836] relative py-1 ${
-      isActive
-        ? 'text-[#BD6836] after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#BD6836]'
-        : 'text-gray-300'
-    }`;
+    return `text-sm font-medium transition-colors hover:text-[#BD6836] relative py-1 ${isActive
+      ? 'text-[#BD6836] after:content-[\'\'] after:absolute after:bottom-0 after:left-0 after:w-full after:h-[2px] after:bg-[#BD6836]'
+      : 'text-gray-300'
+      }`;
   };
 
   return (
@@ -59,8 +57,8 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
         {/* Logo */}
         <a href="#inicio" className="flex items-center gap-3 group">
-          <div className="w-10 h-10 rounded-lg bg-musgo-600/60 border border-musgo-500/30 flex items-center justify-center text-lago-300 group-hover:scale-105 transition-transform">
-            <TreePine className="w-6 h-6 text-[#BD6836]" />
+          <div className="w-10 h-10 rounded-lg bg-white border border-musgo-500/30 flex items-center justify-center text-lago-300 group-hover:scale-105 transition-transform">
+            <img src="/logo-hs.png" alt="Logo Nuestra Huella Sureña" />
           </div>
           <span className="font-display font-semibold text-lg tracking-tight text-white group-hover:text-[#D0854F] transition-colors">
             Nuestra Huella Sureña

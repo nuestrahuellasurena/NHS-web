@@ -63,10 +63,10 @@
   }
 }
 
-/* Fondo del Hero: fiordo en penumbra + textura de bosque */
+/* Fondo del Hero: imagen principal de Nuestra Huella Sureña */
 .bg-forest-pattern {
-  background-image: linear-gradient(180deg, rgba(13, 33, 27, 0.86) 0%, rgba(10, 26, 21, 0.96) 100%),
-                    url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2000&auto=format&fit=crop');
+  background-image: linear-gradient(180deg, rgba(104, 126, 117, 0.58) 0%, rgba(29, 75, 61, 0.68) 100%),
+    url('/bg-hs.jpeg');
   background-size: cover;
   background-position: center;
 }
@@ -78,16 +78,12 @@
   --shingle-size: 34px;
   height: calc(var(--shingle-size) / 2 + 6px);
   background-color: var(--shingle-color, var(--color-niebla-50));
-  -webkit-mask-image: radial-gradient(
-    circle at calc(var(--shingle-size) / 2) 0,
-    transparent calc(var(--shingle-size) / 2 - 1px),
-    black calc(var(--shingle-size) / 2)
-  );
-  mask-image: radial-gradient(
-    circle at calc(var(--shingle-size) / 2) 0,
-    transparent calc(var(--shingle-size) / 2 - 1px),
-    black calc(var(--shingle-size) / 2)
-  );
+  -webkit-mask-image: radial-gradient(circle at calc(var(--shingle-size) / 2) 0,
+      transparent calc(var(--shingle-size) / 2 - 1px),
+      black calc(var(--shingle-size) / 2));
+  mask-image: radial-gradient(circle at calc(var(--shingle-size) / 2) 0,
+      transparent calc(var(--shingle-size) / 2 - 1px),
+      black calc(var(--shingle-size) / 2));
   -webkit-mask-size: var(--shingle-size) var(--shingle-size);
   mask-size: var(--shingle-size) var(--shingle-size);
   -webkit-mask-repeat: repeat-x;
