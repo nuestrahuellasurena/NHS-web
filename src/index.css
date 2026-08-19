@@ -1,0 +1,103 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fiordo: verde-negro profundo del agua de los fiordos australes */
+  --color-fiordo-950: #0a1a15;
+  --color-fiordo-900: #0d211b;
+  --color-fiordo-800: #14312a;
+  --color-fiordo-700: #1c4137;
+
+  /* Musgo: verde de la selva valdiviana */
+  --color-musgo-600: #3f6b56;
+  --color-musgo-500: #547d67;
+  --color-musgo-400: #6f9a82;
+
+  /* Tejuela: madera de alerce oxidada de las fachadas de Chiloé y Puerto Montt */
+  --color-tejuela-600: #a2532b;
+  --color-tejuela-500: #bd6836;
+  --color-tejuela-400: #d0854f;
+
+  /* Lago: azul-verde de los lagos y canales */
+  --color-lago-400: #7fada6;
+  --color-lago-300: #a3c4bd;
+
+  /* Niebla: piedra cálida de la neblina costera */
+  --color-niebla-50: #f6f3ec;
+  --color-niebla-100: #ede7d9;
+  --color-niebla-200: #ddd3bd;
+  --color-niebla-300: #c7b99a;
+  --color-niebla-400: #a89877;
+  --color-niebla-500: #8a7a5f;
+  --color-niebla-600: #6d6049;
+  --color-niebla-700: #524838;
+  --color-niebla-800: #3a3226;
+  --color-niebla-900: #2a241b;
+  --color-niebla-950: #1c1811;
+
+  --font-display: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Work Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-label: "IBM Plex Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    background-color: var(--color-niebla-50);
+    color: #241f18;
+    overflow-x: hidden;
+  }
+
+  /* Compensa la altura del navbar sticky al saltar a una sección por ancla */
+  section[id] {
+    scroll-margin-top: 5rem;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+/* Fondo del Hero: fiordo en penumbra + textura de bosque */
+.bg-forest-pattern {
+  background-image: linear-gradient(180deg, rgba(13, 33, 27, 0.86) 0%, rgba(10, 26, 21, 0.96) 100%),
+                    url('https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?q=80&w=2000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+}
+
+/* Elemento de firma: hilera de tejuelas de alerce (tejas de madera superpuestas),
+   la unidad constructiva característica de las fachadas de Puerto Montt y Chiloé.
+   Cada "escama" es, en sí misma, una pequeña huella superpuesta a la anterior. */
+.shingle-divider {
+  --shingle-size: 34px;
+  height: calc(var(--shingle-size) / 2 + 6px);
+  background-color: var(--shingle-color, var(--color-niebla-50));
+  -webkit-mask-image: radial-gradient(
+    circle at calc(var(--shingle-size) / 2) 0,
+    transparent calc(var(--shingle-size) / 2 - 1px),
+    black calc(var(--shingle-size) / 2)
+  );
+  mask-image: radial-gradient(
+    circle at calc(var(--shingle-size) / 2) 0,
+    transparent calc(var(--shingle-size) / 2 - 1px),
+    black calc(var(--shingle-size) / 2)
+  );
+  -webkit-mask-size: var(--shingle-size) var(--shingle-size);
+  mask-size: var(--shingle-size) var(--shingle-size);
+  -webkit-mask-repeat: repeat-x;
+  mask-repeat: repeat-x;
+  -webkit-mask-position: top;
+  mask-position: top;
+}
+
+@media (min-width: 640px) {
+  .shingle-divider {
+    --shingle-size: 44px;
+  }
+}
